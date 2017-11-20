@@ -1,0 +1,88 @@
+<config>
+    <modules>
+        <Somecomp_Articles>
+            <version>0.0.3</version>
+        </Somecomp_Articles>
+    </modules>
+
+    <frontend>
+        <routers>
+            <somecomparticles>
+                <use>standard</use>
+                <args>
+                    <module>Somecomp_Articles</module>
+                    <frontName>articles</frontName>
+                </args>
+            </somecomparticles>
+        </routers>
+
+        <layout>
+            <updates>
+                <somecomparticles>
+                    <file>somecomp_articles.xml</file>
+                </somecomparticles>
+            </updates>
+        </layout>
+    </frontend>
+
+    <global>
+        <models>
+            <somecomparticles>
+                <class>Somecomp_Articles_Model</class>
+                <resourceModel>somecomparticles_resource</resourceModel>
+            </somecomparticles>
+
+            <somecomparticles_resource>
+                <class>Somecomp_Articles_Model_Resource</class>
+                <entities>
+                    <table_articles>
+                        <table>somecomparticles_entities</table>
+                    </table_articles>
+                </entities>
+            </somecomparticles_resource>
+        </models>
+
+        <resources>
+            <somecomparticles_setup>
+                <setup>
+                    <module>Somecomp_Articles</module>
+                </setup>
+            </somecomparticles_setup>
+        </resources>
+
+        <blocks>
+            <somecomparticles>
+                <class>Somecomp_Articles_Block</class>
+            </somecomparticles>
+        </blocks>
+
+        <helpers>
+            <somecomparticles>
+                <class>Somecomp_Articles_Helper</class>
+            </somecomparticles>
+        </helpers>
+
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <somecomparticles>
+                        <class>Somecomp_Articles_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </somecomparticles>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+    </global>
+
+    <admin>
+        <routers>
+            <somecomparticles_admin>
+                <use>admin</use>
+                <args>
+                    <module>Somecomp_Articles</module>
+                    <frontName>somecomparticles_admin</frontName>
+                </args>
+            </somecomparticles_admin>
+        </routers>
+    </admin>
+</config>

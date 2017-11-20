@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<layout>
+    <somecomparticles_index_index>
+        <reference name="content">
+            <block type="somecomparticles/articles" template="somecomp_articles/index.phtml" />
+        </reference>
+    </somecomparticles_index_index>
+    <somecomparticles_index_view>
+        <reference name="content">
+            <block type="somecomparticles/articles" name="articles.content" template="somecomp_articles/view.phtml" />
+        </reference>
+    </somecomparticles_index_view>
+</layout>

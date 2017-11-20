@@ -1,0 +1,29 @@
+<config>
+    <menu>
+        <catalog>
+            <children>
+                <somecomparticles translate="title" module="somecomparticles">
+                    <title>Articles</title>
+                    <action>somecomparticles_admin/adminhtml_articles/index</action>
+                    <sort_order>999</sort_order>
+                </somecomparticles>
+            </children>
+        </catalog>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <catalog>
+                        <children>
+                            <somecomparticles translate="title" module="somecomparticles">
+                                <title>Articles</title>
+                            </somecomparticles>
+                        </children>
+                    </catalog>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

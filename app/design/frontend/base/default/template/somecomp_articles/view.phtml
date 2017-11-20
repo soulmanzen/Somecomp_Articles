@@ -1,0 +1,8 @@
+<?php $url = Mage::getUrl('articles/') ?>
+<a href="<?php echo $url ?>" ><button>Back To Articles</button></a>
+<br>
+<br>
+<h1><?php echo $articlesItem->getTitle(); ?></h1>
+<div class="content"><?php echo $articlesItem->getDescription(); ?></div>
+<div class="content"><?php echo $articlesItem->getContent(); ?></div>
+<img width="400px" src="<?php echo $articlesItem->getImageUrl(); ?>" alt="">

@@ -1,0 +1,48 @@
+<?php
+$articles = $this->getByPage();
+$articlesViewUrl = Mage::getUrl('articles/');
+$links = $this->getPagination();
+$pageNumber = $this->getPageNumber();
+?>
+
+<div style="display: inline-block"><h2><?php echo $this->__('Articles table'); ?></h2></div>
+<div style="display: inline-block; float: right;">
+    <a href="<?php echo $this->getDirectionUrl("direction/ASC"); ?>" style="margin: 0 4px;">ASC</a>
+    <a href="<?php echo $this->getDirectionUrl("direction/DESC"); ?>" style="margin: 0 4px;">DESC</a>
+</div>
+<div style="display: inline-block; float: right; margin-right: 10px;">Sort by Created</div>
+
+<table class="articlestable">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Created</th>
+    </tr>
+    <?php foreach ($articles as $item) : ?>
+        <tr>
+            <td><?php echo $item->getId(); ?></td>
+            <td><a href="<?php echo $articlesViewUrl,$this->prepareUrl($item->getTitle()); ?>">
+                    <?php echo $item->getTitle(); ?>
+                </a></td>
+            <td><?php echo $item->getDescription(); ?></td>
+            <td><?php echo $item->getCreated(); ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+
+<?php if (! empty($links)) : ?>
+    <div>
+        <?php foreach ($links as $link) : ?>
+            <?php if ($pageNumber == $link['pagenum']) : ?>
+                <span>
+                    <?php echo $link['pagenum']; ?>
+                </span>
+            <?php else : ?>
+                <a href="<?php echo $link['href']; ?>" style="margin: 0 4px;">
+                    <?php echo $link['pagenum']; ?>
+                </a>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
